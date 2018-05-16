@@ -14,7 +14,6 @@ class HamburgerButton extends Component {
   }
 
   render() {
-    console.log('button state', this.state);
     return (
       <Button onClick={ this.handleClick } isOpen={ this.state.isOpen }>
         <OuterTrigger>
