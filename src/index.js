@@ -11,7 +11,7 @@ import {
 } from 'react-router-dom';
 import history from './utils/history';
 
-import './index.css';
+import './styles/index.css';
 
 import registerServiceWorker from './registerServiceWorker';
 
