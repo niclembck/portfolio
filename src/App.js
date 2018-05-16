@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import HamburgerButton from './components/HamburgerButton/HamburgerButton';
+import AppHeader from './components/AppHeader/AppHeader';
 
 class App extends Component {
   render() {
     return (
       <AppContainer>
-        <HamburgerButton />
+        <AppHeader />
       </AppContainer>
     );
   }
