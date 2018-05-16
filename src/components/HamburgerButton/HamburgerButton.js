@@ -36,6 +36,10 @@ const Button = styled.button`
   width: 50px;
   height: 50px;
   padding: 0;
+
+  &:focus {
+    outline: none;
+  }
 `;
 const OuterTrigger = styled.div`
   position: relative;
