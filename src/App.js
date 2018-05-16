@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import AppHeader from './components/AppHeader/AppHeader';
+import SiteNavigation from './components/SiteNavigation/SiteNavigation';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navigationIsOpen: false
+    }
+  }
+
+  handleNavigationToggle = () => {
+    this.setState({ navigationIsOpen: !this.state.navigationIsOpen });
+  }
+
   render() {
     return (
       <AppContainer>
-        <AppHeader />
+        <AppHeader handleNavigationToggle={ this.handleNavigationToggle } isOpen={ this.state.navigationIsOpen } />
+        <SiteNavigation isOpen={ this.state.navigationIsOpen } />
       </AppContainer>
     );
   }
@@ -20,4 +33,6 @@ const AppContainer = styled.div`
   width: 100%;
   height: 100%;
   flex: 1;
+  position: relative;
+  background-color: slategrey;
 `;

@@ -1,29 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-class HamburgerButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    }
-  }
-
-  handleClick = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  }
-
-  render() {
-    return (
-      <Button onClick={ this.handleClick } isOpen={ this.state.isOpen }>
-        <OuterTrigger>
-          <TopBar isOpen={ this.state.isOpen } />
-          <MiddleBar isOpen={ this.state.isOpen } />
-          <BottomBar isOpen={ this.state.isOpen } />
-        </OuterTrigger>
-      </Button>
-    );
-  }
+const HamburgerButton = ({ handleClick, isOpen }) => {
+  return (
+    <Button onClick={ handleClick }>
+      <OuterTrigger>
+        <TopBar isOpen={ isOpen } />
+        <MiddleBar isOpen={ isOpen } />
+        <BottomBar isOpen={ isOpen } />
+      </OuterTrigger>
+    </Button>
+  );
 }
 
 export default HamburgerButton;

@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import HamburgerButton from '../HamburgerButton/HamburgerButton';
 
-const AppHeader = (props) => {
+const AppHeader = ({ handleNavigationToggle, isOpen }) => {
   return (
-    <Container>
-      <div />
-      <HamburgerButton />
+    <Container isOpen={ isOpen }>
+      <div>Yo</div>
+      <HamburgerButton handleClick={ handleNavigationToggle } isOpen={ isOpen } />
     </Container>
   );
 }
@@ -18,5 +18,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 20px;
+  padding: ${props => props.isOpen ? '30px' : '10px 20px'};
+  transition: padding 0.2s linear, height 0.2s linear;
+  background: white;
+  z-index: 3;
 `;
