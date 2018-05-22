@@ -18,7 +18,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${props => props.isOpen ? '30px' : '10px 20px'};
+  padding: ${props => props.isOpen ? '30px' : '20px'};
   transition: padding 0.2s linear, height 0.2s linear;
   background: white;
   z-index: 3;
