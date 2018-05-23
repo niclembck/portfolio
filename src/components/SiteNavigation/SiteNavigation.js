@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import _ from 'lodash';
 import styled from 'styled-components';
 
-class SiteNavigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    }
-  }
+const SiteNavigation = (props) => {
+  const renderNavButtons = () => {
+    const navMap = [
+      {
+        path: '/',
+        label: 'Home'
+      },
+      {
+        path: '/sandbox',
+        label: 'Sandbox'
+      },
+    ];
+    return _.map(navMap, link => {
+      return (
+        <NavLink
+          to={ link.path }
+          onClick={ props.handleClick }
+          key={ link.label }
+        >
+          { link.label }
+        </NavLink>
+      );
+    });
+  };
 
-  componentWillReceiveProps(nextProps) {
-    if (this.state.isOpen !== nextProps.isOpen) {
-      this.setState({ isOpen: nextProps.isOpen });
-    }
-  }
-
-  render() {
-    console.log('state', this.state);
-    return (
-      <Container isOpen={ this.state.isOpen }>
-        <Navigation isOpen={ this.state.isOpen }>
-          Navigation
-        </Navigation>
-      </Container>
-    );
-  }
+  return (
+    <Container isOpen={ props.isOpen }>
+      <Navigation isOpen={ props.isOpen }>{ renderNavButtons() }</Navigation>
+    </Container>
+  );
 };
 
 export default SiteNavigation;
@@ -51,4 +59,9 @@ const Navigation = styled.nav`
     ? 'opacity 0.2s cubic-bezier(0.03, 0.46, 0.31, 0.97)'
     : 'opacity 0.5s cubic-bezier(0.03, 0.46, 0.31, 0.97)'
   };
+`;
+const NavLink = styled(Link)`
+  padding: 0 20px;
+  font-size: 20px;
+  color: #333;
 `;
