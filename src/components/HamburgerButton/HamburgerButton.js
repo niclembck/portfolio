@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const HamburgerButton = ({ handleClick, isOpen }) => {
   return (
-    <Button onClick={ handleClick }>
+    <Button onClick={ handleClick } isOpen={ isOpen }>
       <OuterTrigger>
         <TopBar isOpen={ isOpen } />
         <MiddleBar isOpen={ isOpen } />
@@ -17,8 +17,8 @@ export default HamburgerButton;
 
 
 // Button size variables (adjust barHeight to dynamically resize button)
-const barHeight = '3px';
-const buttonHeight = `calc(${barHeight} * 10)`;
+const barHeight = '1px';
+const buttonHeight = `calc(${barHeight} * 20)`;
 
 // Button styles and animations
 const Button = styled.button`
@@ -28,9 +28,13 @@ const Button = styled.button`
   width: ${buttonHeight};
   height: ${buttonHeight};
   padding: 0;
-
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform-origin: center center;
   &:focus {
     outline: none;
+  }
+  &:hover {
+    transform: ${props => props.isOpen ? 'rotate(90deg)' : 'rotate(0deg)'};
   }
 `;
 const OuterTrigger = styled.div`
@@ -45,7 +49,7 @@ const Bar = styled.div`
   background-color: #333;
 `;
 const TopBar = Bar.extend`
-  top: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -3)`};
+  top: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -6)`};
   transform: ${props => props.isOpen ? 'rotate(225deg)' : 'rotate(0deg)'};
   transition: ${props => props.isOpen
     ? 'top 0.2s cubic-bezier(0.32, 0.01, 0, 1), transform 0.5s 0.2s cubic-bezier(0.32, 0.01, 0, 1)'
@@ -59,7 +63,7 @@ const MiddleBar = Bar.extend`
   transition: ${props => props.isOpen ? 'opacity 0.2s linear' : 'opacity 0.5s linear'};
 `;
 const BottomBar = Bar.extend`
-  bottom: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -3)`};
+  bottom: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -6)`};
   transform: ${props => props.isOpen ? 'rotate(-225deg)' : 'rotate(0deg)'};
   transition: ${props => props.isOpen
     ? 'bottom 0.2s cubic-bezier(0.32, 0.01, 0, 1), transform 0.5s 0.2s cubic-bezier(0.32, 0.01, 0, 1)'

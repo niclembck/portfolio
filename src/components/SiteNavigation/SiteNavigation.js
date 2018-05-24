@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import styled from 'styled-components';
+
+import AppHeader from '../AppHeader/AppHeader';
 
 const SiteNavigation = (props) => {
   const renderNavButtons = () => {
@@ -30,6 +32,12 @@ const SiteNavigation = (props) => {
 
   return (
     <Container isOpen={ props.isOpen }>
+      <HeaderPosition isOpen={ props.isOpen }>
+        <AppHeader
+          handleNavigationToggle={ props.handleClick }
+          isOpen={ props.isOpen }
+        />
+      </HeaderPosition>
       <Navigation isOpen={ props.isOpen }>{ renderNavButtons() }</Navigation>
     </Container>
   );
@@ -41,19 +49,27 @@ const Container = styled.div`
   position: fixed;
   z-index: 2;
   width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: ${props => props.isOpen ? '100%' : '0'};
   overflow: hidden;
-  transition: ${props => props.isOpen ? 'height 0s 0s linear' : 'height 0s 0.2s linear'};
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  background-color: rgba(255, 255, 255, .9);
+`;
+const HeaderPosition = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
 `;
 const Navigation = styled.nav`
   position: relative;
-  width: 100%;
-  min-height: 100%;
-  padding: ${props => props.isOpen ? '100px 50px 50px' : '0'};
   display: flex;
   flex-flow: column-wrap;
   justify-content: center;
-  background-color: #fff;
   opacity: ${props => props.isOpen ? '1' : '0'};
   transition: ${props => props.isOpen
     ? 'opacity 0.2s cubic-bezier(0.03, 0.46, 0.31, 0.97)'
@@ -62,6 +78,7 @@ const Navigation = styled.nav`
 `;
 const NavLink = styled(Link)`
   padding: 0 20px;
-  font-size: 20px;
+  font-size: 25px;
   color: #333;
+  text-decoration: none;
 `;
