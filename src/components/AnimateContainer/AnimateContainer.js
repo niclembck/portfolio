@@ -28,7 +28,6 @@ class AnimateContainer extends Component {
   }
 
   render() {
-    console.log('viewState', this.state.viewState);
     return (
       <div ref={ this.props.innerRef}>
         <Container viewState={ this.state.viewState }>

@@ -47,7 +47,7 @@ export default SiteNavigation;
 
 const Container = styled.div`
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   top: 0;
   display: flex;
@@ -55,7 +55,7 @@ const Container = styled.div`
   justify-content: center;
   height: ${props => props.isOpen ? '100%' : '0'};
   overflow: hidden;
-  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.2s cubic-bezier(0.55, 0.05, 0.55, 0.95);
   background-color: rgba(255, 255, 255, .9);
 `;
 const HeaderPosition = styled.div`

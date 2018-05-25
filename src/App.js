@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
-        <Headroom>
+        <Headroom style={{ zIndex: 3 }}>
           <AppHeader
             handleNavigationToggle={ this.handleNavigationToggle }
             isOpen={ this.state.navigationIsOpen }

@@ -21,5 +21,5 @@ const Container = styled.div`
   padding: 20px;
   transition: padding 0.2s linear, height 0.2s linear;
   background: white;
-  z-index: 2;
+  z-index: 4;
 `;

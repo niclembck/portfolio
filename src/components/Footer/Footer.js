@@ -18,13 +18,18 @@ const Footer = (props) => {
       label: 'Bandcamp',
       url: 'https://northforkhome.bandcamp.com/',
       icon: 'fab fa-bandcamp'
+    },
+    {
+      label: 'Strava',
+      url: 'https://www.strava.com/athletes/6164044',
+      icon: 'fab fa-strava'
     }
   ];
 
   const renderSocialLinks = (links) => {
     return _.map(links, link => {
       return (
-        <IconLinkContainer label={ link.label }>
+        <IconLinkContainer label={ link.label } key={ link.label }>
           <IconLink
             href={ link.url }
             target="_blank"
@@ -50,9 +55,11 @@ const Footer = (props) => {
 
 export default Footer;
 
+const footerHeight = '350px'
+
 const Container = styled.footer`
   width: 100%;
-  height: 400px;
+  height: ${footerHeight};
   background-color: #1d1d1d;
   position: relative;
   z-index: 1;
@@ -63,7 +70,7 @@ const FooterContent = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 400px
+  height: ${footerHeight}
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,11 +80,10 @@ const Row = styled.div`
   display: flex;
 `;
 const Name = styled.div`
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 300;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   letter-spacing: 1.2;
-  text-transform: uppercase;
 `;
 const Title = styled.div`
   font-size: 18px;
@@ -88,7 +94,7 @@ const IconRow = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 100px auto 0;
+  margin: 50px auto 0;
   list-style: none;
   padding: 0;
 
@@ -109,9 +115,9 @@ const IconLinkContainer = styled.li`
   &:before {
     content: "${props => props.label}";
     font-weight: 300;
-    text-transform: uppercase;
+    font-size: 14px;
     position: absolute;
-    top: -25px;
+    bottom: -45px;
     left: 50%;
     transform: translate(-50%, -100%);
     visibility: hidden;
@@ -129,7 +135,7 @@ const IconLinkContainer = styled.li`
   }
 `;
 const IconLink = styled.a`
-  font-size: 25px;
+  font-size: 20px;
   color: #fff;
   text-decoration: none;
 `;
