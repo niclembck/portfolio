@@ -22,10 +22,9 @@ class App extends Component {
   }
 
   render() {
-    console.log('state', this.state.navigationIsOpen);
     return (
       <AppContainer>
-        <Headroom disable={ this.state.navigationIsOpen }>
+        <Headroom>
           <AppHeader
             handleNavigationToggle={ this.handleNavigationToggle }
             isOpen={ this.state.navigationIsOpen }
@@ -36,10 +35,12 @@ class App extends Component {
           handleClick={ this.handleNavigationToggle }
         />
         <AppContent>
-          <Switch>
-            <Route exact path="/" component={ Home } />
-            <Route path="/sandbox" component={ Sandbox } />
-          </Switch>
+          <PageContent>
+            <Switch>
+              <Route exact path="/" component={ Home } />
+              <Route path="/sandbox" component={ Sandbox } />
+            </Switch>
+          </PageContent>
           <Footer />
         </AppContent>
       </AppContainer>
@@ -50,11 +51,14 @@ class App extends Component {
 export default App;
 
 const AppContainer = styled.div`
-
   width: 100%;
   height: 100%;
   flex: 1;
 `;
 const AppContent = styled.div`
   flex: 1;
+`;
+const PageContent = styled.div`
+  position: relative;
+  z-index: 2;
 `;

@@ -11,3 +11,16 @@ body {
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
+
+
+/* Typography */
+h1 {
+  font-size: 35px;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
