@@ -7,6 +7,7 @@ import AppHeader from './components/AppHeader/AppHeader';
 import SiteNavigation from './components/SiteNavigation/SiteNavigation';
 import Home from './modules/Home/Home';
 import Sandbox from './modules/Sandbox/Sandbox';
+import Studio from './modules/Studio/Studio';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={ Home } />
               <Route path="/sandbox" component={ Sandbox } />
+              <Route path="/studio" component={ Studio } />
             </Switch>
           </PageContent>
           <Footer />
@@ -62,4 +64,5 @@ const PageContent = styled.div`
   position: relative;
   z-index: 2;
   background-color: #fff;
+  padding-bottom: 100px;
 `;

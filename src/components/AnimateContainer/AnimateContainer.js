@@ -44,9 +44,9 @@ class AnimateContainer extends Component {
     if (direction === 'bottom') {
       return ['0px, -60px', '0px, 60px'];
     } else if (direction === 'left') {
-      return ['60px, 0', '-60px, 0'];
+      return ['-60px, 0', '-60px, 0'];
     } else if (direction === 'right') {
-      return ['-60px, 0', '60px, 0'];
+      return ['60px, 0', '60px, 0'];
     } else {
       return ['0, 60px', '0, -60px'];
     }

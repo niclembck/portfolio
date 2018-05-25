@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Hero from '../../components/Hero/Hero';
+import HeroContainer from '../../components/HeroContainer/HeroContainer';
 import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints';
+import SelectedWork from '../../components/SelectedWork/SelectedWork';
 
 const sectionMap = [
   {
@@ -24,24 +25,16 @@ const sectionMap = [
   {
     label: 'Intro Subheader',
     content: <p style={{ maxWidth: 900, margin: '0 auto 100px auto', paddingRight: 100 }}>
-                I have spent the last 10+ years of my professional life honing the creative skills needed to plan, design, develop and maintain a variety of websites, applications, brands and experiences. With a wealth of experience in both print and digital design, I provide a full spectrum of services to help the needs of both individuals and companies, be they large or small.
+                For over 10 years, I have been helping designing, developing and maintaining a variety of applications, websites and experiences. I believe in thoughtful, detailed design as a means of empowering individuals and groups, paving the way for a better future for all.
               </p>,
     topOffset: '50px',
     bottomOffset: '25%'
   },
   {
-    label: 'Left Card',
-    content: <img style={{ boxShadow: '0 2px 5px rgba(0, 0, 0, .2)', margin: 10 }} src="http://niclembck.com/images/mftastycard-1.jpg" />,
-    topOffset: '110px',
-    bottomOffset: '20%',
-    animationOrigin: 'left'
-  },
-  {
-    label: 'Right Card',
-    content: <img style={{ boxShadow: '0 2px 5px rgba(0, 0, 0, .2)', margin: 10 }} src="http://niclembck.com/images/mftastycard-2.jpg" />,
-    topOffset: '90px',
-    bottomOffset: '25%',
-    animationOrigin: 'right'
+    label: 'Selected Work',
+    content: <SelectedWork />,
+    topOffset: '100px',
+    bottomOffset: '20%'
   }
 ];
 
@@ -51,17 +44,29 @@ const Home = (props) => {
     sectionMap[1],
     sectionMap[2]
   ];
-  const leftArray = [ sectionMap[3] ];
-  const rightArray = [ sectionMap[4] ];
+  const workArray = [ sectionMap[3] ];
 
   return (
     <Container>
-      <Hero />
+      <HeroContainer>
+        <div
+          style={{
+            backgroundColor: 'palevioletred',
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#fff'
+          }}
+        >
+          Home Page Hero section
+        </div>
+      </HeroContainer>
       <DynamicWaypoints data={ introArray } />
-      <ContentRow>
-        <DynamicWaypoints data={ leftArray } />
-        <DynamicWaypoints data={ rightArray } />
-      </ContentRow>
+      <Content>
+        <DynamicWaypoints data={ workArray } />
+      </Content>
     </Container>
   );
 };
@@ -75,9 +80,10 @@ const CardImage = styled.img`
   box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
   margin: 10px;
 `;
-const ContentRow = styled.div`
-  display: flex;
+const Content = styled.div`
   margin: 0 auto;
   width: 900px;
-  padding-bottom: 100px;
+`;
+const ContentRow = Content.extend`
+  display: flex;
 `;

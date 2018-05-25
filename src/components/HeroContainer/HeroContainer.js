@@ -15,5 +15,4 @@ const Container = styled.div`
   margin-bottom: 50px;
   position: relative;
   overflow: hidden;
-  background-color: #c01e6a;
 `;
