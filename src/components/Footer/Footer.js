@@ -7,29 +7,37 @@ const Footer = (props) => {
     {
       label: 'LinkedIn',
       url: 'https://www.linkedin.com/in/nic-lembck-3461ab8a/',
-      icon: 'fab fa-linkedin-in'
+      icon: 'fab fa-linkedin-in',
+      color: '#0077b5'
     },
     {
       label: 'Instagram',
       url: 'https://www.instagram.com/northforkhome',
-      icon: 'fab fa-instagram'
+      icon: 'fab fa-instagram',
+      color: '#d93175'
     },
     {
       label: 'Bandcamp',
       url: 'https://northforkhome.bandcamp.com/',
-      icon: 'fab fa-bandcamp'
+      icon: 'fab fa-bandcamp',
+      color: '#629aa9'
     },
     {
       label: 'Strava',
       url: 'https://www.strava.com/athletes/6164044',
-      icon: 'fab fa-strava'
+      icon: 'fab fa-strava',
+      color: '#fc4c02'
     }
   ];
 
   const renderSocialLinks = (links) => {
     return _.map(links, link => {
       return (
-        <IconLinkContainer label={ link.label } key={ link.label }>
+        <IconLinkContainer
+          label={ link.label }
+          key={ link.label }
+          color={ link.color }
+        >
           <IconLink
             href={ link.url }
             target="_blank"
@@ -76,9 +84,6 @@ const FooterContent = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Row = styled.div`
-  display: flex;
-`;
 const Name = styled.div`
   font-size: 30px;
   font-weight: 300;
@@ -95,8 +100,9 @@ const IconRow = styled.ul`
   align-items: center;
   justify-content: center;
   margin: 50px auto 0;
+  border-top: 1px solid #666;
   list-style: none;
-  padding: 0;
+  padding: 20px;
 
   &:hover {
     li:not(:hover) {
@@ -108,13 +114,12 @@ const IconLinkContainer = styled.li`
   position: relative;
   cursor: pointer;
   list-style: none;
-  padding: 0 15px;
   opacity: .8;
   transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
   &:before {
     content: "${props => props.label}";
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     position: absolute;
     bottom: -45px;
@@ -132,10 +137,16 @@ const IconLinkContainer = styled.li`
       opacity: 1;
       transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
     }
+
+   a {
+      color: ${props => props.color};
+    }
   }
 `;
 const IconLink = styled.a`
   font-size: 20px;
   color: #fff;
   text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 `;

@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import _ from 'lodash';
 import Waypoint from 'react-waypoint';
 import styled from 'styled-components';
 
 import AnimateContainer from '../../components/AnimateContainer/AnimateContainer';
 import Hero from '../../components/Hero/Hero';
+import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints';
 
 const sectionMap = [
   {
@@ -30,94 +31,44 @@ const sectionMap = [
               </p>,
     topOffset: '50px',
     bottomOffset: '25%'
+  },
+  {
+    label: 'Left Card',
+    content: <img style={{ boxShadow: '0 2px 5px rgba(0, 0, 0, .2)', margin: 10 }} src="http://niclembck.com/images/mftastycard-1.jpg" />,
+    topOffset: '110px',
+    bottomOffset: '20%',
+    animationOrigin: 'left'
+  },
+  {
+    label: 'Right Card',
+    content: <img style={{ boxShadow: '0 2px 5px rgba(0, 0, 0, .2)', margin: 10 }} src="http://niclembck.com/images/mftastycard-2.jpg" />,
+    topOffset: '90px',
+    bottomOffset: '25%',
+    animationOrigin: 'right'
   }
 ];
 
-class Sandbox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeSection: [],
-      previousSection: []
-    }
-  }
+const Sandbox = (props) => {
+  const introArray = [
+    sectionMap[0],
+    sectionMap[1],
+    sectionMap[2]
+  ];
+  const leftArray = [ sectionMap[3] ];
+  const rightArray = [ sectionMap[4] ];
+  return (
+    <Container>
+      <Hero />
 
-  handleEnter(id, e) {
-    let filteredArray = this.state.previousSection.filter(item => item !== id)
-    this.setState({
-      activeSection: [...this.state.activeSection, id],
-      previousSection: filteredArray
-    });
-  }
+      <DynamicWaypoints data={ introArray } />
 
-  handleLeave(id, e) {
-    let filteredArray = this.state.activeSection.filter(item => item !== id)
-    this.setState({ activeSection: filteredArray });
-    if (e.currentPosition === 'above') {
-      this.setState({ previousSection: [ ...this.state.previousSection, id] });
-    }
-  }
+      <ContentRow>
+        <DynamicWaypoints data={ leftArray } />
+        <DynamicWaypoints data={ rightArray } />
+      </ContentRow>
 
-  renderSections(sectionMap) {
-    return _.map(sectionMap, (section, index) => {
-      return (
-        <Waypoint
-          onEnter={ this.handleEnter.bind(this, index) }
-          onLeave={ this.handleLeave.bind(this, index) }
-          topOffset={ section.topOffset || 0 }
-          bottomOffset={ section.bottomOffset || 0 }
-          key={ index }
-        >
-          <AnimateContainer
-            isActive={ _.includes(this.state.activeSection, index) }
-            isPrevious={ _.includes(this.state.previousSection, index) }
-          >
-            <div>{ section.content }</div>
-          </AnimateContainer>
-        </Waypoint>
-      );
-    });
-  }
-
-  render() {
-    return (
-      <Container>
-        <Hero />
-
-        { this.renderSections(sectionMap) }
-
-        <div style={{ display: 'flex', margin: '0 auto', width: 900, paddingBottom: 100 }}>
-          <Waypoint
-            onEnter={ this.handleEnter.bind(this, 4) }
-            onLeave={ this.handleLeave.bind(this, 4) }
-            topOffset="110px"
-            bottomOffset="20%"
-          >
-            <AnimateContainer
-              isActive={ _.includes(this.state.activeSection, 4) }
-              isPrevious={ _.includes(this.state.previousSection, 4) }
-            >
-              <CardImage src="http://niclembck.com/images/mftastycard-1.jpg" />
-            </AnimateContainer>
-          </Waypoint>
-          <Waypoint
-            onEnter={ this.handleEnter.bind(this, 5) }
-            onLeave={ this.handleLeave.bind(this, 5) }
-            topOffset="90px"
-            bottomOffset="25%"
-          >
-            <AnimateContainer
-              isActive={ _.includes(this.state.activeSection, 5) }
-              isPrevious={ _.includes(this.state.previousSection, 5) }
-            >
-              <CardImage src="http://niclembck.com/images/mftastycard-2.jpg" />
-            </AnimateContainer>
-          </Waypoint>
-        </div>
-
-      </Container>
-    );
-  }
+    </Container>
+  );
 };
 
 export default Sandbox;
@@ -128,4 +79,10 @@ const Container = styled.div`
 const CardImage = styled.img`
   box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
   margin: 10px;
+`;
+const ContentRow = styled.div`
+  display: flex;
+  margin: 0 auto;
+  width: 900px;
+  padding-bottom: 100px;
 `;

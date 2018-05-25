@@ -61,4 +61,5 @@ const AppContent = styled.div`
 const PageContent = styled.div`
   position: relative;
   z-index: 2;
+  background-color: #fff;
 `;
