@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import styled from 'styled-components';
 
@@ -51,7 +52,7 @@ const Footer = (props) => {
   return (
     <Container>
       <FooterContent>
-        <Name>Nic Lembck</Name>
+        <Name to="/">Nic Lembck</Name>
         <Title>UI UX Design</Title>
         <IconRow>
           { renderSocialLinks(linkMap) }
@@ -84,15 +85,17 @@ const FooterContent = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Name = styled.div`
+const Name = styled(Link)`
   font-size: 30px;
   font-weight: 300;
-  margin-bottom: 5px;
-  letter-spacing: 1.2;
+  color: #fff;
+  letter-spacing: 4px;
+  text-decoration: none;
+  margin-bottom: 10px;
 `;
 const Title = styled.div`
   font-size: 18px;
-  opacity: .8;
+  opacity: .65;
   font-weight: 300;
 `;
 const IconRow = styled.ul`
@@ -114,6 +117,7 @@ const IconLinkContainer = styled.li`
   position: relative;
   cursor: pointer;
   list-style: none;
+  margin: 0 15px;
   opacity: .8;
   transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
@@ -147,6 +151,5 @@ const IconLink = styled.a`
   font-size: 20px;
   color: #fff;
   text-decoration: none;
-  margin: 0 15px;
   transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 `;

@@ -5,6 +5,16 @@ import PropTypes from 'prop-types';
 
 import AnimateContainer from '../AnimateContainer/AnimateContainer';
 
+// ----------------------------------------------------------------
+// Props for objects in the 'props.data' array
+// ----------------------------------------------------------------
+// label: 'string',
+// content: 'any', - usually JSX or a string
+// topOffset: 'string (number as px or %)' - optional,
+// bottomOffset: 'string (number as px or %)' - optional,
+// animationOrigin: 'string (bottom[default], top, left, or right'
+// ----------------------------------------------------------------
+
 class DynamicWaypoints extends Component {
   constructor(props) {
     super(props);
