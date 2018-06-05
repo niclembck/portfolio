@@ -3,11 +3,15 @@ import styled from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
 import Headroom from 'react-headroom';
 
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import AppHeader from './components/AppHeader/AppHeader';
 import SiteNavigation from './components/SiteNavigation/SiteNavigation';
 import Home from './modules/Home/Home';
 import Sandbox from './modules/Sandbox/Sandbox';
 import Studio from './modules/Studio/Studio';
+import Work from './modules/Work/Work';
+import Illustrations from './modules/Illustrations/Illustrations';
+import Earbits from './modules/Earbits/Earbits';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -25,26 +29,31 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
-        <Headroom style={{ zIndex: 3 }}>
-          <AppHeader
-            handleNavigationToggle={ this.handleNavigationToggle }
+        <ScrollToTop>
+          <Headroom style={{ zIndex: 3 }}>
+            <AppHeader
+              handleNavigationToggle={ this.handleNavigationToggle }
+              isOpen={ this.state.navigationIsOpen }
+            />
+          </Headroom>
+          <SiteNavigation
             isOpen={ this.state.navigationIsOpen }
+            handleClick={ this.handleNavigationToggle }
           />
-        </Headroom>
-        <SiteNavigation
-          isOpen={ this.state.navigationIsOpen }
-          handleClick={ this.handleNavigationToggle }
-        />
-        <AppContent>
-          <PageContent>
-            <Switch>
-              <Route exact path="/" component={ Home } />
-              <Route path="/sandbox" component={ Sandbox } />
-              <Route path="/studio" component={ Studio } />
-            </Switch>
-          </PageContent>
-          <Footer />
-        </AppContent>
+          <AppContent>
+            <PageContent>
+              <Switch>
+                <Route exact path="/" component={ Home } />
+                <Route exact path="/work" component={ Work } />
+                <Route path="/work/illustrations" component={ Illustrations } />
+                <Route path="/work/earbits" component={ Earbits } />
+                <Route path="/studio" component={ Studio } />
+                <Route path="/sandbox" component={ Sandbox } />
+              </Switch>
+            </PageContent>
+            <Footer />
+          </AppContent>
+        </ScrollToTop>
       </AppContainer>
     );
   }

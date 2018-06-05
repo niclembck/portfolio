@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import HamburgerButton from '../HamburgerButton/HamburgerButton';
 
-const AppHeader = ({ handleNavigationToggle, isOpen }) => {
-  return (
-    <Container>
-      <Row to="/">
-        <Logo />
-        <Name>Nic Lembck</Name>
-        <Title>UI UX Design</Title>
-      </Row>
-      <HamburgerButton handleClick={ handleNavigationToggle } isOpen={ isOpen } />
-    </Container>
-  );
+class AppHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.escFunction = this.escFunction.bind(this);
+  }
+
+  escFunction = () => {
+    if (this.props.isOpen) {
+      this.props.handleNavigationToggle();
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.escFunction, false);
+  }
+
+  render() {
+    const { handleNavigationToggle, isOpen } = this.props
+
+    return (
+      <Container>
+        <Row to="/">
+          <Logo />
+          <Name>Nic Lembck</Name>
+          <Title>Design</Title>
+        </Row>
+        <HamburgerButton handleClick={ handleNavigationToggle } isOpen={ isOpen } />
+      </Container>
+    );
+  }
+
 }
 
 export default AppHeader;
@@ -32,7 +52,7 @@ const Row = styled(Link)`
   cursor: pointer;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 19px;
   text-decoration: none;
 `;
 const Logo = styled.div`
@@ -48,8 +68,10 @@ const Name = styled.div`
   font-weight: 600;
   color: #333;
   margin-right: 5px;
+  letter-spacing: 1px;
 `;
 const Title = styled.div`
   font-weight: 300;
-  color: #999;
+  color: #757575;
+  letter-spacing: 1px;
 `;

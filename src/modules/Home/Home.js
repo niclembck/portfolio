@@ -1,39 +1,65 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import LayoutStyles from '../../components/LayoutStyles/LayoutStyles';
 import HeroContainer from '../../components/HeroContainer/HeroContainer';
 import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints';
 import SelectedWork from '../../components/SelectedWork/SelectedWork';
+import ToolList from '../../components/ToolList/ToolList';
+
+const {
+  CenteredContent,
+  PaddedTextContainer,
+  FullBleed
+} = LayoutStyles;
 
 const sectionMap = [
   {
     label: 'Intro Header',
-    content: <div style={{ maxWidth: 900, margin: '0 auto' }}>
-                <h1>Hi there</h1>
-              </div>,
+    content: <h1 style={{ marginTop: '20vh' }}>Hi there</h1>,
+    topOffset: '50px',
+    bottomOffset: '15%'
+  },
+  {
+    label: 'Intro Subheader',
+    content: <h3>My name is <a href="/sandbox" className="animatedLink" title="About" style={{ color: '#000' }}>Nic Lembck</a> and I am a <a href="/work" className="animatedLink" title="Work" style={{ color: '#000' }}>UX designer and front-end engineer</a>.</h3>,
+    topOffset: '50px',
+    bottomOffset: '10%'
+  },
+   {
+    label: 'Intro Paragraph',
+    content: <PaddedTextContainer>
+              <p style={{ maxWidth: '30em' }}>
+                I am a multidisciplinary designer, engineer and illustrator focused on foward-thinking solutions to the problems of the modern times.
+              </p>
+             </PaddedTextContainer>,
     topOffset: '50px',
     bottomOffset: '20%'
   },
   {
     label: 'Intro Subheader',
-    content: <div style={{ maxWidth: 900, margin: '0 auto' }}>
-                <h3>My name is Nic Lembck and I am a UX designer and front-end engineer.</h3>
-              </div>,
+    content: <PaddedTextContainer>
+              <p style={{ maxWidth: '50em' }}>
+                For over 10 years, I have been helping design, develop and maintain a variety of applications, websites and services. I believe in thoughtful, detailed design as a means of empowering individuals and groups, paving the way for a better future for all.
+              </p>
+             </PaddedTextContainer>,
     topOffset: '50px',
     bottomOffset: '20%'
   },
   {
-    label: 'Intro Subheader',
-    content: <p style={{ maxWidth: 900, margin: '0 auto 100px auto', paddingRight: 100 }}>
-                For over 10 years, I have been helping designing, developing and maintaining a variety of applications, websites and experiences. I believe in thoughtful, detailed design as a means of empowering individuals and groups, paving the way for a better future for all.
-              </p>,
+    label: 'Tool List',
+    content: <ToolList />,
     topOffset: '50px',
-    bottomOffset: '25%'
+    bottomOffset: '10%'
   },
   {
     label: 'Selected Work',
-    content: <SelectedWork />,
-    topOffset: '100px',
+    content: <FullBleed color="#eee">
+              <CenteredContent>
+                <SelectedWork />
+              </CenteredContent>
+             </FullBleed>,
+    topOffset: '50px',
     bottomOffset: '20%'
   }
 ];
@@ -44,29 +70,23 @@ const Home = (props) => {
     sectionMap[1],
     sectionMap[2]
   ];
-  const workArray = [ sectionMap[3] ];
+  const aboutArray = [
+    sectionMap[3],
+    sectionMap[4]
+  ];
+  const workArray = [ sectionMap[5] ];
 
   return (
     <Container>
-      <HeroContainer>
-        <div
-          style={{
-            backgroundColor: 'palevioletred',
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff'
-          }}
-        >
-          Home Page Hero section
-        </div>
+      <HeroContainer backgroundImage="/images/homeHero.png">
+        <CenteredContent>
+          <DynamicWaypoints data={ introArray } />
+        </CenteredContent>
       </HeroContainer>
-      <DynamicWaypoints data={ introArray } />
-      <Content>
-        <DynamicWaypoints data={ workArray } />
-      </Content>
+      <CenteredContent>
+        <DynamicWaypoints data={ aboutArray } />
+      </CenteredContent>
+      <DynamicWaypoints data={ workArray } />
     </Container>
   );
 };
@@ -75,15 +95,4 @@ export default Home;
 
 const Container = styled.div`
   flex: 1;
-`;
-const CardImage = styled.img`
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-  margin: 10px;
-`;
-const Content = styled.div`
-  margin: 0 auto;
-  width: 900px;
-`;
-const ContentRow = Content.extend`
-  display: flex;
 `;

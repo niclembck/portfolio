@@ -1,13 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Hero from '../../components/Hero/Hero';
-import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints';
+import HeroContainer from '../../components/HeroContainer/HeroContainer';
+import Bike from '../../components/Bike/Bike';
+import Mountains from '../../components/Illustrations/Mountains/Mountains';
 
 const Sandbox = (props) => {
   return (
     <Container>
-      <Hero />
+      <HeroContainer>
+        <div
+          style={{
+            backgroundColor: 'burlywood',
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#fff'
+          }}
+        >
+          <Bike />
+          <Mountains />
+        </div>
+      </HeroContainer>
     </Container>
   );
 };

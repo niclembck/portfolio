@@ -7,8 +7,8 @@ import CardLink from '../CardLink/CardLink';
 const test1 = [
   {
     label: 'Earbits Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-earbits.jpg" link="/" />,
-    topOffset: '110px',
+    content: <CardLink image="http://niclembck.com/images/thumb-earbits.jpg" link="work/earbits" title="Earbits Radio" />,
+    topOffset: '0',
     bottomOffset: '18%',
     animationOrigin: 'left'
   }
@@ -16,8 +16,8 @@ const test1 = [
 const test2 = [
   {
     label: 'Illustration Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-doodles.jpg" link="/" />,
-    topOffset: '90px',
+    content: <CardLink image="http://niclembck.com/images/thumb-doodles.jpg" link="work/illustrations" title="Illustrations" />,
+    topOffset: '0',
     bottomOffset: '20%',
     animationOrigin: 'right'
   }
@@ -25,8 +25,8 @@ const test2 = [
 const test3 = [
   {
     label: 'Johnson & Johnson Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-jnj-natural.jpg" link="/" />,
-    topOffset: '110px',
+    content: <CardLink image="http://niclembck.com/images/thumb-jnj-natural.jpg" link="/" title="Johnson's Natural" />,
+    topOffset: '0',
     bottomOffset: '18%',
     animationOrigin: 'left'
   }
@@ -34,8 +34,8 @@ const test3 = [
 const test4 = [
   {
     label: 'UCSF Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-ucsfmc.jpg" link="/" />,
-    topOffset: '90px',
+    content: <CardLink image="http://niclembck.com/images/thumb-ucsfmc.jpg" link="/" title="UCSF Medical Center" />,
+    topOffset: '0',
     bottomOffset: '20%',
     animationOrigin: 'right'
   }

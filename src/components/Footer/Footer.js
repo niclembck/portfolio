@@ -12,6 +12,12 @@ const Footer = (props) => {
       color: '#0077b5'
     },
     {
+      label: 'GitHub',
+      url: 'https://github.com/niclembck',
+      icon: 'fab fa-github',
+      color: '#4078c0'
+    },
+    {
       label: 'Instagram',
       url: 'https://www.instagram.com/northforkhome',
       icon: 'fab fa-instagram',
@@ -52,8 +58,10 @@ const Footer = (props) => {
   return (
     <Container>
       <FooterContent>
-        <Name to="/">Nic Lembck</Name>
-        <Title>UI UX Design</Title>
+        <NameRow to="/" className="animatedLink">
+          <Name>Nic Lembck</Name>
+          <Title>Design</Title>
+        </NameRow>
         <IconRow>
           { renderSocialLinks(linkMap) }
         </IconRow>
@@ -85,25 +93,28 @@ const FooterContent = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Name = styled(Link)`
-  font-size: 30px;
-  font-weight: 300;
-  color: #fff;
-  letter-spacing: 4px;
+const NameRow = styled(Link)`
+  display: flex;
+  font-size: 25px;
+  margin-bottom: 30px;
   text-decoration: none;
-  margin-bottom: 10px;
+  color: #fff;
+`;
+const Name = styled.div`
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-right: 5px;
 `;
 const Title = styled.div`
-  font-size: 18px;
   opacity: .65;
   font-weight: 300;
+  letter-spacing: 2px;
 `;
 const IconRow = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px auto 0;
-  border-top: 1px solid #666;
+  margin: 0 auto;
   list-style: none;
   padding: 20px;
 
