@@ -4,19 +4,25 @@ import PropTypes from 'prop-types';
 
 const HeroContainer = (props) => {
   return (
-    <Container backgroundImage={ props.backgroundImage }>{ props.children }</Container>
+    <Container
+      backgroundImage={ props.backgroundImage }
+      fullHeight={ props.fullHeight }
+    >
+      { props.children }
+    </Container>
   );
 };
 
 export default HeroContainer;
 
 HeroContainer.propTypes = {
-  backgroundImage: PropTypes.string
+  backgroundImage: PropTypes.string.isRequired,
+  fullHeight: PropTypes.bool
 };
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: ${props => props.fullHeight ? '100vh' : '75vh'};
   position: relative;
   overflow: hidden;
   background: ${props => props.backgroundImage

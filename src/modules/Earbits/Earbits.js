@@ -1,27 +1,50 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import LayoutStyles from '../../components/LayoutStyles/LayoutStyles';
 import HeroContainer from '../../components/HeroContainer/HeroContainer';
-import BrowserContainer from '../../components/BrowserContainer/BrowserContainer';
+import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints';
+
+const { CenteredContent } = LayoutStyles;
+
+const sectionMap = [
+  {
+    label: 'Earbits Music',
+    content: <h1>Earbits Music</h1>,
+    topOffset: '50px',
+    bottomOffset: '0%'
+  },
+  {
+    label: 'Subtitle',
+    content: <h4 style={{ color: '#e85a1d' }}>Connecting bands with their fans</h4>,
+    topOffset: '50px',
+    bottomOffset: 0
+  },
+  {
+    label: 'Description',
+    content: <p style={{ maxWidth: '45em' }}>
+              Earbits is an internet radio site devoted to helping musicians find and engage with fans. During my time on the team, we experimented with a myriad of ways to directly connect musicians and listeners. Direct listening, track queues, custom channels and social networking alongside a smooth radio experience make up a dynamic and complex platform.
+             </p>,
+    topOffset: '50px',
+    bottomOffset: '5%'
+  },
+  {
+    label: 'My Role',
+    content: <p style={{ maxWidth: '45em', marginBottom: 50 }}>
+              As the sole designer and lead front-end developer, it was my job to create a functional, friendly and engaging experience for artists and listeners alike. I was responsible for the entire look and feel of the site, coming up with new features and how to implement them, and writing the HTML and CSS.
+             </p>,
+             topOffset: '50px',
+             bottomOffset: '5%'
+  }
+];
 
 const Earbits = (props) => {
   return (
     <Container>
-      <HeroContainer>
-        <div
-          style={{
-            backgroundColor: 'palevioletred',
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff'
-          }}
-        >
-          <BrowserContainer image="http://niclembck.com/images/earbits-hero.jpg" />
-        </div>
-      </HeroContainer>
+      <HeroContainer backgroundImage="/images/earbitsHero.png" />
+      <CenteredContent style={{ paddingTop: 0 }}>
+        <DynamicWaypoints data={ sectionMap } />
+      </CenteredContent>
     </Container>
   );
 };

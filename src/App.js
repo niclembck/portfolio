@@ -12,6 +12,7 @@ import Studio from './modules/Studio/Studio';
 import Work from './modules/Work/Work';
 import Illustrations from './modules/Illustrations/Illustrations';
 import Earbits from './modules/Earbits/Earbits';
+import About from './modules/About/About';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
                 <Route path="/work/earbits" component={ Earbits } />
                 <Route path="/studio" component={ Studio } />
                 <Route path="/sandbox" component={ Sandbox } />
+                <Route path="/about" component={ About } />
               </Switch>
             </PageContent>
             <Footer />

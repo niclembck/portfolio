@@ -18,6 +18,7 @@ const Card = styled(Link)`
   display: block;
   cursor: pointer;
   overflow: hidden;
+  min-width: 200px;
 
   img {
     height: 100%;

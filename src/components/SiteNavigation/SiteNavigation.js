@@ -21,6 +21,10 @@ const SiteNavigation = (props) => {
         label: 'Studio'
       },
       {
+        path: '/about',
+        label: 'About'
+      },
+      {
         path: '/sandbox',
         label: 'Sandbox'
       }

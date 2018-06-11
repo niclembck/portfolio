@@ -9,8 +9,8 @@ class AppHeader extends Component {
     this.escFunction = this.escFunction.bind(this);
   }
 
-  escFunction = () => {
-    if (this.props.isOpen) {
+  escFunction = (e) => {
+    if (this.props.isOpen && e.key === 'Escape') {
       this.props.handleNavigationToggle();
     }
   }
@@ -24,11 +24,10 @@ class AppHeader extends Component {
 
     return (
       <Container>
-        <Row to="/">
-          <Logo />
+        <SiteName to="/">
           <Name>Nic Lembck</Name>
           <Title>Design</Title>
-        </Row>
+        </SiteName>
         <HamburgerButton handleClick={ handleNavigationToggle } isOpen={ isOpen } />
       </Container>
     );
@@ -43,35 +42,28 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 30px;
+  padding: 10px 30px;
   transition: padding 0.2s linear, height 0.2s linear;
   background-color: #fff;
   z-index: 4;
 `;
-const Row = styled(Link)`
+const SiteName = styled(Link)`
   cursor: pointer;
   display: flex;
   align-items: center;
   font-size: 19px;
   text-decoration: none;
 `;
-const Logo = styled.div`
-  width: 30px;
-  height: 30px;
-  box-shadow: 0 0 1px 1px #999;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  background-color: #ddd;
-  margin-right: 10px;
-`;
 const Name = styled.div`
-  font-weight: 600;
-  color: #333;
+  font-weight: 300;
+  color: #fff;
   margin-right: 5px;
+  padding: 5px 5px 5px 10px;
   letter-spacing: 1px;
+  background-color: #89cce7;
 `;
 const Title = styled.div`
   font-weight: 300;
-  color: #757575;
+  color: #89cce7;
   letter-spacing: 1px;
 `;

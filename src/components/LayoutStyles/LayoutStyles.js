@@ -3,8 +3,11 @@ import styled from 'styled-components';
 const LayoutStyles = {
   CenteredContent: styled.div`
     margin: 0 auto;
-    max-width: 1170px;
+    max-width: 940px;
     padding: 50px 25px;
+    @media (min-width : 1200px) {
+      max-width: 1170px;
+    }
   `,
   PaddedTextContainer: styled.div`
     padding-right: 100px;

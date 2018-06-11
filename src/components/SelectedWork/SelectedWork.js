@@ -46,12 +46,20 @@ const SelectedWork = (props) => {
     <div>
       <h1>Selected Work</h1>
       <Row>
-        <DynamicWaypoints data={ test1 } />
-        <DynamicWaypoints data={ test2 } />
+        <Cell>
+          <DynamicWaypoints data={ test1 } />
+        </Cell>
+        <Cell>
+          <DynamicWaypoints data={ test2 } />
+        </Cell>
       </Row>
        <Row>
-        <DynamicWaypoints data={ test3 } />
-        <DynamicWaypoints data={ test4 } />
+        <Cell>
+          <DynamicWaypoints data={ test3 } />
+        </Cell>
+        <Cell>
+          <DynamicWaypoints data={ test4 } />
+        </Cell>
       </Row>
     </div>
   );
@@ -63,5 +71,9 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+`;
+const Cell = styled.div`
+  flex: 1;
+  padding: 20px;
 `;

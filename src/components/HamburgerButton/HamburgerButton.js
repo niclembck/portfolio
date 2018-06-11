@@ -17,8 +17,8 @@ export default HamburgerButton;
 
 
 // Button size variables (adjust barHeight to dynamically resize button)
-const barHeight = '2px';
-const buttonHeight = `calc(${barHeight} * 12)`;
+const barHeight = '1px';
+const buttonHeight = `calc(${barHeight} * 19)`;
 
 // Button styles and animations
 const Button = styled.button`
@@ -46,10 +46,10 @@ const Bar = styled.div`
   position: absolute;
   height: ${barHeight};
   width: 100%;
-  background-color: #333;
+  background-color: #666;
 `;
 const TopBar = Bar.extend`
-  top: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -4)`};
+  top: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -6)`};
   transform: ${props => props.isOpen ? 'rotate(225deg)' : 'rotate(0deg)'};
   transition: ${props => props.isOpen
     ? 'top 0.2s cubic-bezier(0.32, 0.01, 0, 1), transform 0.5s 0.2s cubic-bezier(0.32, 0.01, 0, 1)'
@@ -63,7 +63,7 @@ const MiddleBar = Bar.extend`
   transition: ${props => props.isOpen ? 'opacity 0.2s linear' : 'opacity 0.5s linear'};
 `;
 const BottomBar = Bar.extend`
-  bottom: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -4)`};
+  bottom: ${props => props.isOpen ? '0px' : `calc(${barHeight} * -6)`};
   transform: ${props => props.isOpen ? 'rotate(-225deg)' : 'rotate(0deg)'};
   transition: ${props => props.isOpen
     ? 'bottom 0.2s cubic-bezier(0.32, 0.01, 0, 1), transform 0.5s 0.2s cubic-bezier(0.32, 0.01, 0, 1)'

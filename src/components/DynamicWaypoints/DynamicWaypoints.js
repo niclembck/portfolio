@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Waypoint from 'react-waypoint';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import AnimateContainer from '../AnimateContainer/AnimateContainer';
+import PhotoClip from '../PhotoClip/PhotoClip';
 
 // ----------------------------------------------------------------
 // Props for objects in the 'props.data' array
@@ -12,7 +14,8 @@ import AnimateContainer from '../AnimateContainer/AnimateContainer';
 // content: 'any', - usually JSX or a string
 // topOffset: 'string (number as px or %)' - optional,
 // bottomOffset: 'string (number as px or %)' - optional,
-// animationOrigin: 'string (bottom[default], top, left, or right'
+// animationOrigin: 'string (bottom[default], top, left, or right',
+// imageLink: 'string' - default null
 // ----------------------------------------------------------------
 
 class DynamicWaypoints extends Component {
@@ -56,13 +59,21 @@ class DynamicWaypoints extends Component {
           bottomOffset={ w.bottomOffset || 0 }
           key={ index }
         >
-          <AnimateContainer
-            isActive={ _.includes(this.state.activeSection, index) }
-            isPrevious={ _.includes(this.state.previousSection, index) }
-            animationOrigin={ w.animationOrigin || 'bottom' }
-          >
-            { w.content }
-          </AnimateContainer>
+          { w.imageLink
+            ? <PhotoClip
+                image={ w.imageLink }
+                isActive={ _.includes(this.state.activeSection, index) }
+                isPrevious={ _.includes(this.state.previousSection, index) }
+                animationOrigin={ w.animationOrigin || 'bottom' }
+              />
+            : <AnimateContainer
+                isActive={ _.includes(this.state.activeSection, index) }
+                isPrevious={ _.includes(this.state.previousSection, index) }
+                animationOrigin={ w.animationOrigin || 'bottom' }
+              >
+                { w.content }
+              </AnimateContainer>
+          }
         </Waypoint>
       );
     });
@@ -70,9 +81,15 @@ class DynamicWaypoints extends Component {
 
   render() {
     return (
-      <div>{ this.renderWaypoints(this.props.data) }</div>
+      <Container>{ this.renderWaypoints(this.props.data) }</Container>
     );
   }
 }
 
 export default DynamicWaypoints;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
