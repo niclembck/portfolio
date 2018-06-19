@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import LayoutStyles from '../../components/LayoutStyles/LayoutStyles';
 import HeroContainer from '../../components/HeroContainer/HeroContainer';
 import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints';
+import TabletFrame from '../../components/TabletFrame/TabletFrame';
 
-const { CenteredContent } = LayoutStyles;
+const { CenteredContent, FullBleed } = LayoutStyles;
 
 const sectionMap = [
   {
@@ -23,7 +24,7 @@ const sectionMap = [
   {
     label: 'Description',
     content: <p style={{ maxWidth: '45em' }}>
-              Earbits is an internet radio site devoted to helping musicians find and engage with fans. During my time on the team, we experimented with a myriad of ways to directly connect musicians and listeners. Direct listening, track queues, custom channels and social networking alongside a smooth radio experience make up a dynamic and complex platform.
+              Earbits was an internet radio site devoted to helping musicians find and engage with fans. During my time on the team, we experimented with a myriad of ways to directly connect musicians and listeners. Direct listening, track queues, custom channels and social networking alongside a smooth radio experience made up a dynamic and complex platform. Thanks to these features and the success of the platform, Earbits was sold at a profit in 2015.
              </p>,
     topOffset: '50px',
     bottomOffset: '5%'

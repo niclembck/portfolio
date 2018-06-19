@@ -41,7 +41,7 @@ export default Resume;
 const Row = styled.div`
   display: flex;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 15px;
 `;
 const Title = styled.div`
   font-weight: 600;

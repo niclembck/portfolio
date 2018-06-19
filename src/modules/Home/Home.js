@@ -6,7 +6,7 @@ import HeroContainer from '../../components/HeroContainer/HeroContainer';
 import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints';
 import SelectedWork from '../../components/SelectedWork/SelectedWork';
 
-const { CenteredContent, PaddedTextContainer } = LayoutStyles;
+const { CenteredContent, PaddedTextContainer, FullBleed } = LayoutStyles;
 
 const sectionMap = [
   {
@@ -25,7 +25,7 @@ const sectionMap = [
     label: 'Intro Paragraph',
     content: <PaddedTextContainer>
               <p style={{ maxWidth: '30em' }}>
-                I am focused on foward-thinking solutions to the problems of the modern times, with a particular interest in sustainability.
+                Focused on foward-thinking solutions to the problems of the modern times. Particularly interested in sustainability and a healthy reconnection with the world around us.
               </p>
               <a href="/sandbox" className="animatedLink blueText" style={{ fontSize: 17, fontWeight: 600 }}>Get in touch</a>
              </PaddedTextContainer>,
