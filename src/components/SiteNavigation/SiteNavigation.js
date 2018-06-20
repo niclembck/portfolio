@@ -17,16 +17,8 @@ const SiteNavigation = (props) => {
         label: 'Work'
       },
       {
-        path: '/studio',
-        label: 'Studio'
-      },
-      {
         path: '/about',
         label: 'About'
-      },
-      {
-        path: '/sandbox',
-        label: 'Sandbox'
       }
     ];
     return _.map(navMap, link => {

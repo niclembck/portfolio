@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import LayoutStyles from '../../components/LayoutStyles/LayoutStyles';
 import HeroContainer from '../../components/HeroContainer/HeroContainer';
@@ -17,7 +18,7 @@ const sectionMap = [
   },
   {
     label: 'Intro Subheader',
-    content: <h3>My name is <a href="/sandbox" className="animatedLink" title="About" style={{ color: '#000' }}>Nic Lembck</a>. I am a <a href="/work" className="animatedLink" title="Work" style={{ color: '#000' }}>UX designer and front-end engineer</a>.</h3>,
+    content: <h3>My name is <Link to="/sandbox" className="animatedLink" title="About" style={{ color: '#000' }}>Nic Lembck</Link>. I am a <Link to="/work" className="animatedLink" title="Work" style={{ color: '#000' }}>UX designer and front-end engineer</Link>.</h3>,
     topOffset: '50px',
     bottomOffset: '10%'
   },
@@ -27,7 +28,7 @@ const sectionMap = [
               <p style={{ maxWidth: '30em' }}>
                 Focused on foward-thinking solutions to the problems of the modern times. Particularly interested in sustainability and a healthy reconnection with the world around us.
               </p>
-              <a href="/sandbox" className="animatedLink blueText" style={{ fontSize: 17, fontWeight: 600 }}>Get in touch</a>
+              <Link to="/about" className="animatedLink blueText" style={{ fontSize: 17, fontWeight: 600 }}>Get in touch</Link>
              </PaddedTextContainer>,
     topOffset: '50px',
     bottomOffset: '20%'

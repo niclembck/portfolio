@@ -9,8 +9,8 @@ const { CenteredContent } = LayoutStyles;
 
 const imageMap = [
   {
-    label: 'Test Image',
-    topOffset: '50px',
+    label: 'About Image',
+    topOffset: '20px',
     bottomOffset: '20%',
     imageLink: '/images/McKenziePortrait.jpg'
   }
@@ -33,7 +33,7 @@ const About = (props) => {
             For over 10 years, I have been helping design, develop and maintain a variety of applications, websites and services. I believe in thoughtful, detailed design as a means of empowering our world, paving the way for a better future for all.
           </p>
           <p>
-            Along with my passion for UX and UI design, I am an avid musician, cyclist, reader and craftsman. I believe a well-rounded array of creative and intellectual pursuits is the key to a happy life, and am always on the hunt for more tools of expression and creation to add to my arsenal. I am interested in projects that aim to make the world a happier, healthier place. If you have a project or proposal, please <a href="mailto: niclembck@gmail.com" className="animatedLink blueText">get in touch</a>.
+            Along with my passion for UX and UI design, I am an avid musician, cyclist, reader and craftsman. I believe a well-rounded array of creative and intellectual pursuits is the key to a happy life, and am always on the hunt for more tools of expression and creation to add to my arsenal. I am interested in projects that aim to make the world a happier, healthier place.
           </p>
         </SectionContent>
       </AboutSection>
@@ -61,6 +61,11 @@ const About = (props) => {
               CSS<br />
               Adobe CS<br />
             </Disciplines>
+            <Disciplines>
+              UX Design<br />
+              Prototyping<br />
+              Wireframing<br />
+            </Disciplines>
           </Row>
         </SectionContent>
       </AboutSection>
@@ -75,6 +80,10 @@ const Content = styled.div`
 `;
 const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  @media (max-width : 480px) {
+    display: block;
+  }
 `;
 const ImageContainer = styled.div`
   display: flex;
@@ -98,5 +107,8 @@ const SectionContent = styled.div`
 `;
 const Disciplines = styled.p`
   flex: 1;
-  margin-top: 0;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
 `;

@@ -27,7 +27,7 @@ const Illustrations = (props) => {
           >
             <HeroText>Illustrations</HeroText>
           </div>
-          <img src="http://niclembck.com/images/illustrations-hero.jpg" alt="Illustrations" />
+          <img src="/images/illustrations-hero.jpg" alt="Illustrations" />
         </div>
       </HeroContainer>
     </div>

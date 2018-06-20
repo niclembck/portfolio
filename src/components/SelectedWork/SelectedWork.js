@@ -1,43 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import DynamicWaypoints from '../DynamicWaypoints/DynamicWaypoints';
-import CardLink from '../CardLink/CardLink';
 
 const test1 = [
   {
-    label: 'Earbits Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-earbits.jpg" link="work/earbits" title="Earbits Radio" />,
+    label: 'SORT-OE',
+    content: <div>
+               <div style={{ overflow: 'hidden' }}>
+                <img src="/images/thumb-sortoe.jpg" style={{ height: '100%', width: '100%', objectFit: 'contain' }} />
+               </div>
+               <Link to="/work/sortoe" className="animatedLink">SORT-OE</Link>
+               <p style={{ marginTop: 0 }}>Something</p>
+             </div>,
     topOffset: '0',
-    bottomOffset: '18%',
-    animationOrigin: 'left'
+    bottomOffset: '20%'
   }
 ];
 const test2 = [
   {
-    label: 'Illustration Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-doodles.jpg" link="work/illustrations" title="Illustrations" />,
+    label: 'Earbits Card',
+    content: <div>
+               <div style={{ overflow: 'hidden' }}>
+                <img src="/images/thumb-earbits.jpg" style={{ height: '100%', width: '100%', objectFit: 'contain' }} />
+               </div>
+               <Link to="work/earbits" className="animatedLink">Earbits Radio</Link>
+               <p style={{ marginTop: 0 }}>UX / UI Design</p>
+             </div>,
     topOffset: '0',
-    bottomOffset: '20%',
-    animationOrigin: 'right'
+    bottomOffset: '20%'
   }
 ];
 const test3 = [
   {
-    label: 'Johnson & Johnson Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-jnj-natural.jpg" link="/" title="Johnson's Natural" />,
+    label: 'Illustration Card',
+    content: <div>
+               <div style={{ overflow: 'hidden' }}>
+                <img src="/images/thumb-doodles.jpg" style={{ height: '100%', width: '100%', objectFit: 'contain' }} />
+               </div>
+               <Link to="work/illustrations" className="animatedLink">Illustrations</Link>
+               <p style={{ marginTop: 0 }}>Something</p>
+             </div>,
     topOffset: '0',
-    bottomOffset: '18%',
-    animationOrigin: 'left'
+    bottomOffset: '20%'
   }
 ];
 const test4 = [
   {
     label: 'UCSF Card',
-    content: <CardLink image="http://niclembck.com/images/thumb-ucsfmc.jpg" link="/" title="UCSF Medical Center" />,
+    content: <div>
+               <div style={{ overflow: 'hidden' }}>
+                <img src="/images/thumb-ucsfmc.jpg" style={{ height: '100%', width: '100%', objectFit: 'contain' }} />
+               </div>
+               <Link to="/" className="animatedLink">UCSF Medical Center</Link>
+               <p style={{ marginTop: 0 }}>Something</p>
+             </div>,
     topOffset: '0',
-    bottomOffset: '20%',
-    animationOrigin: 'right'
+    bottomOffset: '20%'
   }
 ];
 
@@ -52,8 +72,6 @@ const SelectedWork = (props) => {
         <Cell>
           <DynamicWaypoints data={ test2 } />
         </Cell>
-      </Row>
-       <Row>
         <Cell>
           <DynamicWaypoints data={ test3 } />
         </Cell>
@@ -75,5 +93,4 @@ const Row = styled.div`
 `;
 const Cell = styled.div`
   flex: 1;
-  padding: 20px;
 `;

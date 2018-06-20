@@ -10,20 +10,20 @@ const { CenteredContent, FullBleed } = LayoutStyles;
 const sectionMap = [
   {
     label: 'Earbits Music',
-    content: <h1>Earbits Music</h1>,
+    content: <h1>SORT-OE</h1>,
     topOffset: '50px',
     bottomOffset: '0%'
   },
   {
     label: 'Subtitle',
-    content: <h4 style={{ color: '#e85a1d' }}>Connecting bands with their fans</h4>,
+    content: <h4 style={{ color: '#008A94' }}>Working towards a more peaceful world</h4>,
     topOffset: '50px',
     bottomOffset: 0
   },
   {
     label: 'Description',
     content: <p style={{ maxWidth: '45em' }}>
-              Earbits was an internet radio site devoted to helping musicians find and engage with fans. During my time on the team, we experimented with a myriad of ways to directly connect musicians and listeners. Direct listening, track queues, custom channels and social networking alongside a smooth radio experience made up a dynamic and complex platform. Thanks to these features and the success of the platform, Earbits was sold at a profit in 2015.
+              The Special Operations Requirements Tool - Operating Environments (SORT-OE) is an application that is focused on providing a complete picture of international economic, peace and growth trends. The aim of the application is to provide helpful insight into how government, private and non-profit actions across the world can have a meaningful impact on the future health and prosperity of the world's peoples and cultures.
              </p>,
     topOffset: '50px',
     bottomOffset: '5%'
@@ -31,17 +31,17 @@ const sectionMap = [
   {
     label: 'My Role',
     content: <p style={{ maxWidth: '45em', marginBottom: 50 }}>
-              As the sole designer and lead front-end developer, it was my job to create a functional, friendly and engaging experience for artists and listeners alike. I was responsible for the entire look and feel of the site, coming up with new features and how to implement them, and writing the HTML and CSS.
+
              </p>,
              topOffset: '50px',
              bottomOffset: '5%'
   }
 ];
 
-const Earbits = (props) => {
+const SortOE = (props) => {
   return (
     <Container>
-      <HeroContainer backgroundImage="/images/earbitsHero.png" />
+      <HeroContainer backgroundImage="/images/sortoeHero.jpg" />
       <CenteredContent style={{ paddingTop: 0 }}>
         <DynamicWaypoints data={ sectionMap } />
       </CenteredContent>
@@ -49,7 +49,7 @@ const Earbits = (props) => {
   );
 };
 
-export default Earbits;
+export default SortOE;
 
 const Container = styled.div`
   flex: 1;

@@ -14,7 +14,6 @@ export default CardLink;
 
 const Card = styled(Link)`
   position: relative;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
   display: block;
   cursor: pointer;
   overflow: hidden;

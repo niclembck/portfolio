@@ -31,6 +31,10 @@ const Container = styled.div`
   };
   background-size: cover;
 
+  @media (max-width : 480px) {
+    max-height: 420px;
+  }
+
   img {
     height: 100%;
     height: 100%;
