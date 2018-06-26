@@ -32,7 +32,7 @@ const Container = styled.div`
   background-size: cover;
 
   @media (max-width : 480px) {
-    max-height: 420px;
+    max-height: ${props => props.fullHeight ? '100vh' : '420px'};
   }
 
   img {

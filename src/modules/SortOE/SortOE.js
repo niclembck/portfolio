@@ -16,7 +16,7 @@ const sectionMap = [
   },
   {
     label: 'Subtitle',
-    content: <h4 style={{ color: '#008A94' }}>Working towards a more peaceful world</h4>,
+    content: <h4 style={{ color: '#008A94' }}>Working towards a peaceful world</h4>,
     topOffset: '50px',
     bottomOffset: 0
   },

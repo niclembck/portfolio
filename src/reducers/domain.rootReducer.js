@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import domainTempReducer from './temp.reducer';
+import domainStravaReducer from './strava.reducer';
+
 export default combineReducers({
-  temp: domainTempReducer
+  strava: domainStravaReducer
 });

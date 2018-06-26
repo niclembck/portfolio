@@ -14,6 +14,7 @@ import Illustrations from './modules/Illustrations/Illustrations';
 import Earbits from './modules/Earbits/Earbits';
 import SortOE from './modules/SortOE/SortOE';
 import About from './modules/About/About';
+import BikeTour from './modules/BikeTour/BikeTour';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
                 <Route path="/studio" component={ Studio } />
                 <Route path="/sandbox" component={ Sandbox } />
                 <Route path="/about" component={ About } />
+                <Route path="/bikeTour" component={ BikeTour } />
               </Switch>
             </PageContent>
             <Footer />

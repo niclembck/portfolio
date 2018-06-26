@@ -19,7 +19,7 @@ const imageMap = [
 const About = (props) => {
   return (
     <Content>
-      <CenteredContent>
+      <CenteredContent style={{ paddingBottom: 0 }}>
         <ImageContainer>
           <DynamicWaypoints data={ imageMap } />
         </ImageContainer>
@@ -88,6 +88,10 @@ const Row = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   height: 400px;
+
+  @media (max-width : 480px) {
+    height: 200px;
+  }
 `;
 const AboutSection = styled(CenteredContent)`
   display: flex;
@@ -96,11 +100,16 @@ const AboutSection = styled(CenteredContent)`
   &: last-child {
     border: none;
   }
+
+  @media (max-width : 480px) {
+    display: block;
+  }
 `;
 const SectionTitle = styled.div`
   flex: 1;
   font-size: 20px;
   font-weight: 300;
+  margin-bottom: 15px;
 `;
 const SectionContent = styled.div`
   flex: 2;
