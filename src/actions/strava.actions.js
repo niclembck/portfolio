@@ -20,21 +20,17 @@ export const fetchingActivityList = (isFetching) => ({
   payload: isFetching
 });
 
-export const fetchActivityListCallback = dispatch => (error, data, response) => {
-  if (error) {
-    console.error(error);
-    dispatch(fetchingActivityList(false));
-  } else {
-    console.log('fetch callback');
-    dispatch(setActivityList(data));
-    dispatch(fetchingActivityList(false));
-    return data;
-  }
-};
-
-export const fetchActivityList = (params) => dispatch => {
+export const fetchActivityList = () => dispatch => {
   dispatch(fetchingActivityList(true));
-  stravaAPI.getActivities().then(res => dispatch(setActivityList(res)));
-  dispatch(fetchingActivityList(false));
+  stravaAPI.getActivities()
+    .then(res => {
+      dispatch(setActivityList(res));
+      dispatch(fetchingActivityList(false));
+      return res;
+    })
+    .catch(err => {
+      dispatch(fetchingActivityList(false));
+      return err;
+    });
 };
 
