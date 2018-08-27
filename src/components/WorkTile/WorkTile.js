@@ -9,9 +9,16 @@ const WorkTile = (props) => {
         <img src={ props.image } />
       </ImageContainer>
       <TextContainer>
-        <Name to={ props.linkUrl }>{ props.projectName }</Name>
-        <p>{ props.description }</p>
+        <Name>{ props.projectName }</Name>
         <Roles>{ props.role }</Roles>
+        <p>{ props.description }</p>
+        <Link
+          to={ props.linkUrl }
+          className="animatedLink blueText"
+          style={{ fontWeight: 500, fontSize: 14 }}
+        >
+          View Project
+        </Link>
       </TextContainer>
     </Container>
   );
@@ -24,6 +31,10 @@ const tileSize = '250px';
 const Container = styled.div`
   width: ${tileSize};
   box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+
+  @media (max-width : 560px) {
+    width: 100%;
+  }
 `;
 const ImageContainer = styled(Link)`
   display: block;
@@ -42,14 +53,19 @@ const TextContainer = styled.div`
 
   p {
     margin: 10px 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #5f5f5f;
   }
 `;
-const Name = styled(Link)`
-  font-size: 18px;
-  text-decoration: underline;
-  color: #000;
+const Name = styled.div`
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
 `;
 const Roles = styled.div`
-  color: #777;
+  color: #b3b3b3;
   font-size: 14px;
+  font-weight: 300;
 `;

@@ -55,14 +55,14 @@ const SelectedWork = (props) => {
           image="/images/thumb-biketour.jpg"
           projectName="2018 Bike Tour"
           role="UX, UI, Frontend Dev"
-          description="Prototype app for multi-day bike tour updates"
+          description="Prototype app for multi-day bike tour routing and updates"
         />
         <WorkTile
           linkUrl="/work/ucsfmc"
           image="/images/thumb-ucsfmc.jpg"
           projectName="UCSF Medical Center"
           role="UX, UI"
-          description="Announcement of a new campus for UCSF MC"
+          description="Announcement of a new campus for UCSF Medical Center"
         />
       </Row>
     </div>
@@ -84,4 +84,5 @@ const Row = styled.div`
 `;
 const Cell = styled.div`
   flex: 1 1 50%;
+  }
 `;

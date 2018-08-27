@@ -40,24 +40,24 @@ const sectionMap = [
     label: "SORT-OE Image 1",
     topOffset: '20px',
     bottomOffset: '10%',
-    content:  <div style={{ marginBottom: 30, display: 'flex', justifyContent: 'center' }}>
-                <img src="/images/sortoe1.jpg" />
+    content:  <div style={{ marginBottom: 30, justifyContent: 'center' }}>
+                <img src="/images/sortoe1.jpg" style={{ maxWidth: '100%' }} />
               </div>
   },
   {
     label: "SORT-OE Image 2",
     topOffset: '20px',
     bottomOffset: '10%',
-    content:  <div style={{ marginBottom: 30, display: 'flex', justifyContent: 'center' }}>
-                <img src="/images/sortoe2.jpg" />
+    content:  <div style={{ marginBottom: 30, justifyContent: 'center' }}>
+                <img src="/images/sortoe2.jpg" style={{ maxWidth: '100%' }} />
               </div>
   },
   {
     label: "SORT-OE Image 3",
     topOffset: '20px',
     bottomOffset: '10%',
-    content:  <div style={{ marginBottom: 30, display: 'flex', justifyContent: 'center' }}>
-                <img src="/images/sortoe3.jpg" />
+    content:  <div style={{ marginBottom: 30, justifyContent: 'center' }}>
+                <img src="/images/sortoe3.jpg" style={{ maxWidth: '100%' }} />
               </div>
   }
 ];
