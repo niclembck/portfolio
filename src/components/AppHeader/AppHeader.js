@@ -20,7 +20,7 @@ class AppHeader extends Component {
   }
 
   render() {
-    const { handleNavigationToggle, isOpen } = this.props
+    const { handleNavigationToggle, isOpen } = this.props;
 
     return (
       <Container>

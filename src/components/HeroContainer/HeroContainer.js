@@ -23,6 +23,7 @@ HeroContainer.propTypes = {
 const Container = styled.div`
   width: 100%;
   height: ${props => props.fullHeight ? '100vh' : '75vh'};
+  max-height: ${props => props.fullHeight ? '100vh' : '700px'};
   position: relative;
   overflow: hidden;
   background: ${props => props.backgroundImage

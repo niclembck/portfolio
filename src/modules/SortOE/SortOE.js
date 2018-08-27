@@ -35,8 +35,33 @@ const sectionMap = [
              </p>,
              topOffset: '50px',
              bottomOffset: '5%'
+  },
+  {
+    label: "SORT-OE Image 1",
+    topOffset: '20px',
+    bottomOffset: '10%',
+    content:  <div style={{ marginBottom: 30, display: 'flex', justifyContent: 'center' }}>
+                <img src="/images/sortoe1.jpg" />
+              </div>
+  },
+  {
+    label: "SORT-OE Image 2",
+    topOffset: '20px',
+    bottomOffset: '10%',
+    content:  <div style={{ marginBottom: 30, display: 'flex', justifyContent: 'center' }}>
+                <img src="/images/sortoe2.jpg" />
+              </div>
+  },
+  {
+    label: "SORT-OE Image 3",
+    topOffset: '20px',
+    bottomOffset: '10%',
+    content:  <div style={{ marginBottom: 30, display: 'flex', justifyContent: 'center' }}>
+                <img src="/images/sortoe3.jpg" />
+              </div>
   }
 ];
+
 
 const SortOE = (props) => {
   return (

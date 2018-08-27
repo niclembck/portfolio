@@ -81,7 +81,7 @@ const Navigation = styled.nav`
   };
 `;
 const NavLink = styled(Link)`
-  padding: 0 20px;
+  padding: 0 25px;
   font-size: 25px;
   color: #333;
   text-decoration: none;

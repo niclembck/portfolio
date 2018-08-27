@@ -35,6 +35,12 @@ const sectionMap = [
   },
   {
     label: 'Selected Work',
+    content: <h1>Selected Work</h1>,
+    topOffset: '50px',
+    bottomOffset: '20%'
+  },
+  {
+    label: 'Selected Work',
     content: <SelectedWork />,
     topOffset: '50px',
     bottomOffset: '20%'
@@ -47,7 +53,7 @@ const Home = (props) => {
     sectionMap[1],
     sectionMap[2]
   ];
-  const workArray = [ sectionMap[3] ];
+  const workArray = [ sectionMap[3], sectionMap[4] ];
 
   return (
     <Container>

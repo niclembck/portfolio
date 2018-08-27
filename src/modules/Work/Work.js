@@ -10,6 +10,7 @@ const Work = (props) => {
   return (
     <Container>
       <CenteredContent>
+        <h1>Selected Work</h1>
         <SelectedWork />
       </CenteredContent>
     </Container>

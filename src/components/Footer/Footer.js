@@ -116,7 +116,7 @@ const IconRow = styled.ul`
   justify-content: center;
   margin: 0 auto;
   list-style: none;
-  padding: 20px;
+  padding: 0;
 
   &:hover {
     li:not(:hover) {
@@ -128,7 +128,7 @@ const IconLinkContainer = styled.li`
   position: relative;
   cursor: pointer;
   list-style: none;
-  margin: 0 15px;
+  padding: 0 15px;
   opacity: .8;
   transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 
