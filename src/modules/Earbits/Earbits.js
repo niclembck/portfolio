@@ -31,7 +31,7 @@ const sectionMap = [
   {
     label: 'My Role',
     content: <p style={{ maxWidth: '45em', marginBottom: 50 }}>
-              As the sole designer and lead front-end developer, it was my job to create a functional, friendly and engaging experience for artists and listeners alike. I was responsible for the entire look and feel of the site, coming up with new features and how to implement them, and writing the HTML and CSS.
+              As the sole designer and lead frontend developer, it was my job to create a functional, friendly and engaging experience for artists and listeners alike. I was responsible for the entire look and feel of the site, coming up with new features and how to implement them, and writing the HTML and CSS.
              </p>,
              topOffset: '50px',
              bottomOffset: '5%'

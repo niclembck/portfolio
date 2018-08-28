@@ -31,7 +31,7 @@ const sectionMap = [
   {
     label: 'My Role',
     content: <p style={{ maxWidth: '45em', marginBottom: 50 }}>
-
+               I have been involved in every aspect of the SORT-OE frontend development cycle, from concepting and wireframes to overall design and engineering. Working with project management, I created and refined the UX based on customer feedback, implementing additional features as they are created.
              </p>,
              topOffset: '50px',
              bottomOffset: '5%'
@@ -40,7 +40,7 @@ const sectionMap = [
     label: "SORT-OE Image 1",
     topOffset: '20px',
     bottomOffset: '10%',
-    content:  <div style={{ marginBottom: 30, justifyContent: 'center' }}>
+    content:  <div style={{ marginBottom: 30, textAlign: 'center' }}>
                 <img src="/images/sortoe1.jpg" style={{ maxWidth: '100%' }} />
               </div>
   },
@@ -48,7 +48,7 @@ const sectionMap = [
     label: "SORT-OE Image 2",
     topOffset: '20px',
     bottomOffset: '10%',
-    content:  <div style={{ marginBottom: 30, justifyContent: 'center' }}>
+    content:  <div style={{ marginBottom: 30, textAlign: 'center' }}>
                 <img src="/images/sortoe2.jpg" style={{ maxWidth: '100%' }} />
               </div>
   },
@@ -56,7 +56,7 @@ const sectionMap = [
     label: "SORT-OE Image 3",
     topOffset: '20px',
     bottomOffset: '10%',
-    content:  <div style={{ marginBottom: 30, justifyContent: 'center' }}>
+    content:  <div style={{ marginBottom: 30, textAlign: 'center' }}>
                 <img src="/images/sortoe3.jpg" style={{ maxWidth: '100%' }} />
               </div>
   }

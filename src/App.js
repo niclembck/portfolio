@@ -13,6 +13,7 @@ import Work from './modules/Work/Work';
 import Illustrations from './modules/Illustrations/Illustrations';
 import Earbits from './modules/Earbits/Earbits';
 import SortOE from './modules/SortOE/SortOE';
+import BikeTour2018 from './modules/BikeTour2018/BikeTour2018';
 import About from './modules/About/About';
 import BikeTour from './modules/BikeTour/BikeTour';
 import Footer from './components/Footer/Footer';
@@ -51,6 +52,7 @@ class App extends Component {
                 <Route path="/work/illustrations" component={ Illustrations } />
                 <Route path="/work/earbits" component={ Earbits } />
                 <Route path="/work/sortoe" component={ SortOE } />
+                <Route path="/bikeTour2018" component={ BikeTour2018 } />
                 <Route path="/studio" component={ Studio } />
                 <Route path="/sandbox" component={ Sandbox } />
                 <Route path="/about" component={ About } />

@@ -18,7 +18,7 @@ const sectionMap = [
   },
   {
     label: 'Intro Subheader',
-    content: <h3>My name is <Link to="/sandbox" className="animatedLink" title="About" style={{ color: '#000' }}>Nic Lembck</Link>. I am a <Link to="/work" className="animatedLink" title="Work" style={{ color: '#000' }}>UX designer and front-end engineer</Link>.</h3>,
+    content: <h3>My name is <Link to="/sandbox" className="animatedLink" title="About" style={{ color: '#000' }}>Nic Lembck</Link>. I am a <Link to="/work" className="animatedLink" title="Work" style={{ color: '#000' }}>UX designer and frontend engineer</Link>.</h3>,
     topOffset: '50px',
     bottomOffset: '10%'
   },
@@ -35,7 +35,9 @@ const sectionMap = [
   },
   {
     label: 'Selected Work',
-    content: <h1>Selected Work</h1>,
+    content:  <div style={{ textAlign: 'center' }}>
+                <h1>Selected Work</h1>
+              </div>,
     topOffset: '50px',
     bottomOffset: '20%'
   },

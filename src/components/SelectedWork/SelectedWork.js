@@ -51,7 +51,7 @@ const SelectedWork = (props) => {
           description="Streaming online radio created by and for artists"
         />
         <WorkTile
-          linkUrl="/biketour"
+          linkUrl="/biketour2018"
           image="/images/thumb-biketour.jpg"
           projectName="2018 Bike Tour"
           role="UX, UI, Frontend Dev"
