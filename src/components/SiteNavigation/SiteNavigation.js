@@ -13,10 +13,6 @@ const SiteNavigation = (props) => {
         label: 'Home'
       },
       {
-        path: '/work',
-        label: 'Work'
-      },
-      {
         path: '/about',
         label: 'About'
       }

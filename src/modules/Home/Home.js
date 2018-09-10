@@ -12,7 +12,7 @@ const { CenteredContent, PaddedTextContainer, FullBleed } = LayoutStyles;
 const sectionMap = [
   {
     label: 'Intro Header',
-    content: <h1 style={{ marginTop: '20vh' }}>Hi there</h1>,
+    content: <h1>Hi there</h1>,
     topOffset: '50px',
     bottomOffset: '15%'
   },
@@ -60,9 +60,9 @@ const Home = (props) => {
   return (
     <Container>
       <HeroContainer backgroundImage="/images/homeHero2.png" fullHeight>
-        <CenteredContent>
+        <IntroContainer>
           <DynamicWaypoints data={ introArray } />
-        </CenteredContent>
+        </IntroContainer>
       </HeroContainer>
       <CenteredContent>
         <DynamicWaypoints data={ workArray } />
@@ -75,4 +75,11 @@ export default Home;
 
 const Container = styled.div`
   flex: 1;
+`;
+const IntroContainer = styled(CenteredContent)`
+  padding-top: 20vh;
+
+  @media (max-width : 480px) {
+    padding-top: 17vh;
+  }
 `;

@@ -47,9 +47,6 @@ const BikeTour2018 = (props) => {
       <CenteredContent style={{ paddingTop: 0 }}>
         <DynamicWaypoints data={ sectionMap } />
       </CenteredContent>
-      <CenteredContent>
-        <BikePhoneSection />
-      </CenteredContent>
     </Container>
   );
 };

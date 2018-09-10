@@ -6,7 +6,7 @@ import DynamicWaypoints from '../../components/DynamicWaypoints/DynamicWaypoints
 const photoMap = [
   {
     label: 'Base Phone Image',
-    topOffset: '0',
+    topOffset: '-30px',
     bottomOffset: '10%',
     content:  <div style={{ height: 500, position: 'absolute' }}>
                 <img src="/images/bikeTourPhone1.jpg" style={{ height: '100%' }} />
@@ -14,7 +14,7 @@ const photoMap = [
   },
   {
     label: 'Layer 1',
-    topOffset: '10px',
+    topOffset: '-20px',
     bottomOffset: '40%',
     content:  <div style={{ height: 400, position: 'absolute', left: 30, top: 50 }}>
                 <img src="/images/bikeTourPhone2.png" style={{ height: '100%' }} />
@@ -22,7 +22,7 @@ const photoMap = [
   },
   {
     label: 'Layer 2',
-    topOffset: '15px',
+    topOffset: '-10px',
     bottomOffset: '60%',
     content:  <div style={{ height: 350, position: 'absolute', left: 100, top: 70 }}>
                 <img src="/images/bikeTourPhone2.png" style={{ height: '100%' }} />
@@ -50,10 +50,12 @@ const textMap = [
 const BikePhoneSection = (props) => {
   return (
     <Container>
-      <DynamicWaypoints data={ photoMap } />
-      <div style={{ flex: 2, padding: '70px 0 0 50px' }}>
+      <ImageContainer>
+        <DynamicWaypoints data={ photoMap } />
+      </ImageContainer>
+      <TextContainer>
         <DynamicWaypoints data={ textMap } />
-      </div>
+      </TextContainer>
     </Container>
   );
 };
@@ -61,7 +63,15 @@ const BikePhoneSection = (props) => {
 export default BikePhoneSection;
 
 const Container = styled.div`
-  position: relative;
-  height: 500px;
   display: flex;
+  flex-wrap: wrap;
+`;
+const ImageContainer = styled.div`
+  height: 500px;
+  width: 400px;
+  position: relative;
+`;
+const TextContainer = styled.div`
+  flex: 1;
+  padding-top: 20px;
 `;

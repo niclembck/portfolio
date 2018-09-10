@@ -57,13 +57,13 @@ const SelectedWork = (props) => {
           role="UX, UI, Frontend Dev"
           description="Prototype app for multi-day bike tour routing and updates"
         />
-        <WorkTile
+        {/*<WorkTile
           linkUrl="/work/ucsfmc"
           image="/images/thumb-ucsfmc.jpg"
           projectName="UCSF Medical Center"
           role="UX, UI"
           description="Announcement of a new campus for UCSF Medical Center"
-        />
+        />*/}
       </Row>
     </div>
   );

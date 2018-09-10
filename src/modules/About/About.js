@@ -35,6 +35,9 @@ const About = (props) => {
           <p>
             Along with my passion for UX and UI design, I am an avid musician, cyclist, reader and craftsman. I believe a well-rounded array of creative and intellectual pursuits is the key to a happy life, and am always on the hunt for more tools of expression and creation to add to my arsenal. I am interested in projects that aim to make the world a happier, healthier place.
           </p>
+          <p>
+            If you would like to collaborate, please get in touch via email at niclembck@gmail.com.
+          </p>
         </SectionContent>
       </AboutSection>
       <AboutSection>
